@@ -1,0 +1,74 @@
+#!/usr/bin/perl
+
+use App::gist;
+
+use strict;
+use warnings;
+
+=head1 NAME
+
+gist - GitHub Gist creator
+
+=head1 VERSION
+
+version 0.01
+
+=cut
+
+=head1 SYNOPSIS
+
+ gist FILE [EXTENSION]
+
+ Examples:
+   $ gist script.pl    # Make gist extract the file extension
+   $ gist script .pl   # Explicitly set file extension
+
+=cut
+
+my $usage = <<END;
+gist FILE [EXTENSION]
+
+See 'perldoc gist' for more information.
+END
+
+die $usage if $#ARGV < 0;
+
+my $gist = App::gist -> new(@ARGV) -> run;
+
+print "Gist $gist successfully created.\n";
+print "Public Clone URL: git://gist.github.com/$gist.git\n";
+print "Private Clone URL: git\@gist.github.com:$gist.git\n";
+
+=head1 CONFIGURATION
+
+The login username and the API token can be set via the GITHUB_USER and
+GITHUB_TOKEN environment variables. If not set, will be used the
+values of C<github.user> and C<github.token> from the Git configuration.
+To set them, type:
+
+    $ git config --global github.user LoginName
+    $ git config --global github.token GitHubToken
+
+If neither C<github.user> and C<github.token> are set, the login name and
+the API token will be asked interactively to the user.
+
+=head1 TOKEN
+
+The API token can be found on the C<Account Settings> page on GitHub.
+Visit the url: L<https://github.com/account>
+
+=head1 AUTHOR
+
+Alessandro Ghedini <alexbio@cpan.org>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2011 Alessandro Ghedini.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of either: the GNU General Public License as published
+by the Free Software Foundation; or the Artistic License.
+
+See http://dev.perl.org/licenses/ for more information.
+
+=cut
