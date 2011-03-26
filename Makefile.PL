@@ -25,9 +25,10 @@ my %WriteMakefileArgs = (
   'NAME' => 'App::gist',
   'PREREQ_PM' => {
     'File::Basename' => '0',
+    'Getopt::Long' => '0',
     'WWW::GitHub::Gist' => '0'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => 't/*.t'
   }

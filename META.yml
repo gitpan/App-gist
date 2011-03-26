@@ -15,11 +15,13 @@ meta-spec:
 name: App-gist
 requires:
   File::Basename: 0
+  Getopt::Long: 0
   WWW::GitHub::Gist: 0
 resources:
   bugtracker: https://github.com/AlexBio/App-gist/issues
+  homepage: http://search.cpan.org/dist/App-gist/
   repository: git://github.com/AlexBio/App-gist.git
-version: 0.01
+version: 0.02
 x_Dist_Zilla:
   plugins:
     -

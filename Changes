@@ -1,3 +1,19 @@
+==============================
+9999-99-99 99:99:99 +0000 HEAD
+==============================
+
+  commit a8f2cb82fd11e9efd06ca8d0600487234d0450fe
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat Mar 26 19:48:20 2011 +0100
+  
+    bump version
+
+  commit 4dde620e883224a5a2ba9dbfe601b1734978a5cb
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sat Mar 26 19:44:55 2011 +0100
+  
+    add '--update' option 
+
 ===================================
 End of changes in the last 365 days
 ===================================

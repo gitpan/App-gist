@@ -22,6 +22,7 @@
       "runtime" : {
          "requires" : {
             "File::Basename" : 0,
+            "Getopt::Long" : 0,
             "WWW::GitHub::Gist" : 0
          }
       },
@@ -36,13 +37,14 @@
       "bugtracker" : {
          "web" : "https://github.com/AlexBio/App-gist/issues"
       },
+      "homepage" : "http://search.cpan.org/dist/App-gist/",
       "repository" : {
          "type" : "git",
          "url" : "git://github.com/AlexBio/App-gist.git",
          "web" : "https://github.com/AlexBio/App-gist"
       }
    },
-   "version" : "0.01",
+   "version" : "0.02",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
