@@ -21,7 +21,7 @@ resources:
   bugtracker: https://github.com/AlexBio/App-gist/issues
   homepage: http://search.cpan.org/dist/App-gist/
   repository: git://github.com/AlexBio/App-gist.git
-version: 0.02
+version: 0.03
 x_Dist_Zilla:
   plugins:
     -

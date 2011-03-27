@@ -1,9 +1,8 @@
 package App::gist;
 BEGIN {
-  $App::gist::VERSION = '0.02';
+  $App::gist::VERSION = '0.03';
 }
 
-use Getopt::Long;
 use File::Basename;
 use WWW::GitHub::Gist;
 
@@ -16,7 +15,7 @@ App::gist - GitHub Gist creator
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -39,25 +38,21 @@ Create a App::gist object using the given file and its extension.
 =cut
 
 sub new {
-	my ($class, $file, $ext) = @_;
+	my ($class, $args, $file, $ext) = @_;
 
 	my $login	= $ENV{GITHUB_USER} || `git config github.user`;
 	my $token	= $ENV{GITHUB_TOKEN} || `git config github.token`;
 
 	chomp $login; chomp $token;
 
-	my $update;
-
-	GetOptions(
-		"update=i" => \$update
-	);
-
 	my $opts = {
-		'file'    => $file,
-		'ext'     => $ext,
-		'login'   => $login,
-		'token'   => $token,
-		'gist'    => $update
+		'file'        => $file,
+		'ext'         => $ext,
+		'login'       => $login,
+		'token'       => $token,
+		'gist'        => $args -> {'update'},
+		'private'     => $args -> {'private'},
+		'description' => $args -> {'description'}
 	};
 
 	return bless $opts, $class;
@@ -123,7 +118,10 @@ sub run {
 
 		$gist -> add_file($basename, $data, $ext);
 
-		return $gist -> create -> {'repo'};
+		return $gist -> create(
+			private => $self -> {'private'},
+			description => $self -> {'description'}
+		) -> {'repo'};
 	}
 }
 
