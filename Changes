@@ -2,6 +2,46 @@
 9999-99-99 99:99:99 +0000 HEAD
 ==============================
 
+  commit 1f17c3f01e0f4c7eefa6a5423150e5c8ef4ea6d6
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Apr 25 18:47:26 2011 +0200
+  
+    bump version
+
+  commit 4561be9e0e8c6bc5054fca2be782ef53dfcba86b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Apr 25 18:44:45 2011 +0200
+  
+    support paste from STDIN
+
+  commit 662e858621fc29fe440355ac78ddf300f2ce5e95
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Apr 25 18:22:57 2011 +0200
+  
+    re-fix documentation for --description
+
+  commit 2c6d47c2088b6a14b626bcca4bc5270e262a2f9d
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Apr 25 18:22:29 2011 +0200
+  
+    add --extension option
+
+  commit 04f10d9b7c40cd667ba74bba3832258a04fc5736
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Mon Apr 25 18:05:10 2011 +0200
+  
+    switch to Author::ALEXBIO dzil bundle
+
+  commit 8bbb84cf8d18db9318a0fbc21884637b01950c24
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date:   Sun Mar 27 20:03:57 2011 +0200
+  
+    fix documentation for '--description' 
+
+===============================
+2011-03-27 15:24:57 +0200 v0.03
+===============================
+
   commit 6d5dc142174d50c9b7eb414bc6e7097c6159a9dd
   Author: Alessandro Ghedini <al3xbio@gmail.com>
   Date:   Sun Mar 27 15:24:57 2011 +0200

@@ -1,6 +1,6 @@
 package App::gist;
 BEGIN {
-  $App::gist::VERSION = '0.03';
+  $App::gist::VERSION = '0.04';
 }
 
 use File::Basename;
@@ -15,7 +15,7 @@ App::gist - GitHub Gist creator
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -38,18 +38,32 @@ Create a App::gist object using the given file and its extension.
 =cut
 
 sub new {
-	my ($class, $args, $file, $ext) = @_;
+	my ($class, $args, $file) = @_;
 
 	my $login	= $ENV{GITHUB_USER} || `git config github.user`;
 	my $token	= $ENV{GITHUB_TOKEN} || `git config github.token`;
 
 	chomp $login; chomp $token;
 
+	my ($name, $data);
+
+	if ($file) {
+		open(FILE, $file) or die "Err: Enter a valid file name.\n";
+		$data = join('', <FILE>);
+		close FILE;
+
+		$name = basename($file);
+	} else {
+		$name = 'gistfile.txt';
+		$data = join('', <STDIN>);
+	}
+
 	my $opts = {
-		'file'        => $file,
-		'ext'         => $ext,
+		'name'        => $name,
+		'data'        => $data,
 		'login'       => $login,
 		'token'       => $token,
+		'ext'         => $args -> {'extension'},
 		'gist'        => $args -> {'update'},
 		'private'     => $args -> {'private'},
 		'description' => $args -> {'description'}
@@ -69,6 +83,9 @@ sub run {
 
 	my ($login, $token, $ext, $gist);
 
+	my $data = $self -> {'data'};
+	my $basename = $self -> {'name'};
+
 	if (!$self -> {'login'}) {
 		print STDERR "Enter username: ";
 		chop($login = <STDIN>);
@@ -86,13 +103,7 @@ sub run {
 		$token = $self -> {'token'};
 	}
 
-	open(FILE, $self -> {'file'}) or die "Err: Enter a valid file name.\n";
-	my $data = join('', <FILE>);
-	close FILE;
-
-	my $basename	= basename($self -> {'file'});
-
-	if (!$self -> {'ext'}) {
+	if (!$self -> {'ext'} and defined $basename) {
 		$ext	= ".".($basename =~ m/([^.]+)$/)[0];
 		print "Info: Found '$ext' extension for the given script.\n";
 	} else {

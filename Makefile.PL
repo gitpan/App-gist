@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     'Getopt::Long' => '0',
     'WWW::GitHub::Gist' => '0'
   },
-  'VERSION' => '0.03',
+  'VERSION' => '0.04',
   'test' => {
     'TESTS' => 't/*.t'
   }
