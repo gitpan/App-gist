@@ -4,33 +4,37 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'GitHub Gist creator',
-  'AUTHOR' => 'Alessandro Ghedini <alexbio@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0'
+  "ABSTRACT" => "GitHub Gist creator",
+  "AUTHOR" => "Alessandro Ghedini <alexbio\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Test::More" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'App-gist',
-  'EXE_FILES' => [
-    'bin/gist'
+  "DISTNAME" => "App-gist",
+  "EXE_FILES" => [
+    "bin/gist"
   ],
-  'LICENSE' => 'perl',
-  'NAME' => 'App::gist',
-  'PREREQ_PM' => {
-    'File::Basename' => '0',
-    'Getopt::Long' => '0',
-    'WWW::GitHub::Gist' => '0'
+  "LICENSE" => "perl",
+  "NAME" => "App::gist",
+  "PREREQ_PM" => {
+    "File::Basename" => 0,
+    "Getopt::Long" => 0,
+    "WWW::GitHub::Gist::v3" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.04',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.05",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

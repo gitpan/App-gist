@@ -1,87 +1,153 @@
-==============================
-9999-99-99 99:99:99 +0000 HEAD
-==============================
+==================================================
+Changes from 2011-02-05 00:00:00 +0000 to present.
+==================================================
 
-  commit 1f17c3f01e0f4c7eefa6a5423150e5c8ef4ea6d6
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Mon Apr 25 18:47:26 2011 +0200
-  
-    bump version
+-----------------------------------------
+version 0.05 at 2012-02-05 15:16:08 +0000
+-----------------------------------------
 
-  commit 4561be9e0e8c6bc5054fca2be782ef53dfcba86b
+  Change: 7a987e70eb9ac7f45ac24d3b8a8f7b4b8196a520
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Mon Apr 25 18:44:45 2011 +0200
-  
-    support paste from STDIN
+  Date : 2012-02-05 16:15:53 +0000
 
-  commit 662e858621fc29fe440355ac78ddf300f2ce5e95
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Mon Apr 25 18:22:57 2011 +0200
-  
-    re-fix documentation for --description
+    bump version 
 
-  commit 2c6d47c2088b6a14b626bcca4bc5270e262a2f9d
+  Change: 67e49982cf3fb111cf886c6b62da57bdc99f4f9f
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Mon Apr 25 18:22:29 2011 +0200
-  
-    add --extension option
+  Date : 2012-02-05 16:14:25 +0000
 
-  commit 04f10d9b7c40cd667ba74bba3832258a04fc5736
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Mon Apr 25 18:05:10 2011 +0200
-  
-    switch to Author::ALEXBIO dzil bundle
+    various fixes 
 
-  commit 8bbb84cf8d18db9318a0fbc21884637b01950c24
+  Change: bb6907d40c16977a7fbeb1ff6b2b3794c6c0885a
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Mar 27 20:03:57 2011 +0200
-  
+  Date : 2012-02-05 16:09:49 +0000
+
+    s/token/password/g 
+
+  Change: 78ecad293b69839a10f80be6e8ef12650bca72e5
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-02-05 16:06:14 +0000
+
+    initial switch to GitHub API v3 
+
+  Change: 4173e321e506cc57a893d0356f9a26d71ae30271
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-09-11 15:28:25 +0000
+
+    remove tests 
+
+-----------------------------------------
+version 0.04 at 2011-04-25 16:47:26 +0000
+-----------------------------------------
+
+  Change: 1f17c3f01e0f4c7eefa6a5423150e5c8ef4ea6d6
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-04-25 18:47:26 +0000
+
+    bump version 
+
+  Change: 4561be9e0e8c6bc5054fca2be782ef53dfcba86b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-04-25 18:46:54 +0000
+
+    support paste from STDIN 
+
+  Change: 662e858621fc29fe440355ac78ddf300f2ce5e95
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-04-25 18:23:18 +0000
+
+    re-fix documentation for --description 
+
+  Change: 2c6d47c2088b6a14b626bcca4bc5270e262a2f9d
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-04-25 18:22:29 +0000
+
+    add --extension option 
+
+  Change: 04f10d9b7c40cd667ba74bba3832258a04fc5736
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-04-25 18:05:10 +0000
+
+    switch to Author::ALEXBIO dzil bundle 
+
+  Change: 8bbb84cf8d18db9318a0fbc21884637b01950c24
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-03-27 20:03:57 +0000
+
     fix documentation for '--description' 
 
-===============================
-2011-03-27 15:24:57 +0200 v0.03
-===============================
+-----------------------------------------
+version 0.03 at 2011-03-27 13:24:57 +0000
+-----------------------------------------
 
-  commit 6d5dc142174d50c9b7eb414bc6e7097c6159a9dd
+  Change: 6d5dc142174d50c9b7eb414bc6e7097c6159a9dd
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Mar 27 15:24:57 2011 +0200
-  
-    bump version
+  Date : 2011-03-27 15:24:57 +0000
 
-  commit 8eeb7501161d7763c6d2cf382dc11e9e08114b7c
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Mar 27 15:23:03 2011 +0200
-  
-    add '--description' option
+    bump version 
 
-  commit 5cb26651434e21a9a5f2d64e164b74b8f5485ad1
+  Change: 8eeb7501161d7763c6d2cf382dc11e9e08114b7c
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Mar 27 15:17:00 2011 +0200
-  
-    fix bug in cli arguments parsing
+  Date : 2011-03-27 15:23:03 +0000
 
-  commit e4262b7514df9657cdce5401ca4606aa415a3891
+    add '--description' option 
+
+  Change: 5cb26651434e21a9a5f2d64e164b74b8f5485ad1
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sun Mar 27 15:09:57 2011 +0200
-  
+  Date : 2011-03-27 15:17:00 +0000
+
+    fix bug in cli arguments parsing 
+
+  Change: e4262b7514df9657cdce5401ca4606aa415a3891
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-03-27 15:09:57 +0000
+
     add '--private' option 
 
-===============================
-2011-03-26 19:48:20 +0100 v0.02
-===============================
+-----------------------------------------
+version 0.02 at 2011-03-26 18:48:20 +0000
+-----------------------------------------
 
-  commit a8f2cb82fd11e9efd06ca8d0600487234d0450fe
+  Change: a8f2cb82fd11e9efd06ca8d0600487234d0450fe
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sat Mar 26 19:48:20 2011 +0100
-  
-    bump version
+  Date : 2011-03-26 19:48:20 +0000
 
-  commit 4dde620e883224a5a2ba9dbfe601b1734978a5cb
+    bump version 
+
+  Change: 4dde620e883224a5a2ba9dbfe601b1734978a5cb
   Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date:   Sat Mar 26 19:44:55 2011 +0100
-  
+  Date : 2011-03-26 19:46:10 +0000
+
     add '--update' option 
 
-===================================
-End of changes in the last 365 days
-===================================
+-----------------------------------------
+version 0.01 at 2011-03-21 21:18:20 +0000
+-----------------------------------------
+
+  Change: ccc62fa274ddaceb483a62273af6bf169b1b8624
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-03-21 22:18:20 +0000
+
+    improve docs 
+
+  Change: a9d32dafa6567fe0da7a7cb3c2be6aaeb0894cd9
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-03-21 22:18:20 +0000
+
+    add tests 
+
+  Change: e0e97174b5b0bfda72b0e444dfed71445326771c
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-03-21 22:18:20 +0000
+
+    split core code from presentation 
+
+  Change: c5a39443b7ab9a57bf9bf710b816621b006b5954
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2011-03-21 21:47:00 +0000
+
+    first commit 
+
+================
+End of releases.
+================

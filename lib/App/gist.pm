@@ -1,13 +1,13 @@
 package App::gist;
-BEGIN {
-  $App::gist::VERSION = '0.04';
+{
+  $App::gist::VERSION = '0.05';
 }
 
 use File::Basename;
-use WWW::GitHub::Gist;
+use WWW::GitHub::Gist::v3;
 
-use warnings;
 use strict;
+use warnings;
 
 =head1 NAME
 
@@ -15,42 +15,40 @@ App::gist - GitHub Gist creator
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
-
-Synopsis section
 
     use feature 'say';
     use App::gist;
 
-    use warnings;
     use strict;
+    use warnings;
 
-    say 'Created gist: '.App::gist -> new($file, $extension) -> run;
+    say 'Created gist: ' . App::gist -> new($file) -> run;
 
 =head1 METHODS
 
-=head2 new( $file, $extension )
+=head2 new( $file )
 
-Create a App::gist object using the given file and its extension.
+Create a App::gist object using the given file.
 
 =cut
 
 sub new {
 	my ($class, $args, $file) = @_;
 
-	my $login	= $ENV{GITHUB_USER} || `git config github.user`;
-	my $token	= $ENV{GITHUB_TOKEN} || `git config github.token`;
+	my $login	= $ENV{GITHUB_USER}   || `git config github.user`;
+	my $passwd	= $ENV{GITHUB_PASSWD} || `git config github.password`;
 
-	chomp $login; chomp $token;
+	chomp $login; chomp $passwd;
 
 	my ($name, $data);
 
 	if ($file) {
-		open(FILE, $file) or die "Err: Enter a valid file name.\n";
-		$data = join('', <FILE>);
-		close FILE;
+		open my $fh, '<', $file or die "Err: Enter a valid file name.\n";
+		$data = join('', <$fh>);
+		close $fh;
 
 		$name = basename($file);
 	} else {
@@ -62,8 +60,7 @@ sub new {
 		'name'        => $name,
 		'data'        => $data,
 		'login'       => $login,
-		'token'       => $token,
-		'ext'         => $args -> {'extension'},
+		'passwd'      => $passwd,
 		'gist'        => $args -> {'update'},
 		'private'     => $args -> {'private'},
 		'description' => $args -> {'description'}
@@ -81,7 +78,7 @@ Just run the app.
 sub run {
 	my $self = shift;
 
-	my ($login, $token, $ext, $gist);
+	my ($login, $passwd, $gist);
 
 	my $data = $self -> {'data'};
 	my $basename = $self -> {'name'};
@@ -93,46 +90,37 @@ sub run {
 		$login = $self -> {'login'};
 	}
 
-	if (!$self -> {'token'}) {
-		print STDERR "Enter token for '$login': ";
+	if (!$self -> {'passwd'}) {
+		print STDERR "Enter password for '$login': ";
 		system('stty','-echo') if $^O eq 'linux';
-		chop($login = <STDIN>);
+		chop($passwd = <STDIN>);
 		system('stty','echo') if $^O eq 'linux';
 		print "\n";
 	} else {
-		$token = $self -> {'token'};
-	}
-
-	if (!$self -> {'ext'} and defined $basename) {
-		$ext	= ".".($basename =~ m/([^.]+)$/)[0];
-		print "Info: Found '$ext' extension for the given script.\n";
-	} else {
-		$ext = $self -> {'ext'};
+		$passwd = $self -> {'passwd'};
 	}
 
 	if ($self -> {'gist'}) {
-		$gist = WWW::GitHub::Gist -> new(
-			id	=> $self -> {'gist'},
-			user	=> $login,
-			token	=> $token
+		$gist = WWW::GitHub::Gist::v3 -> new(
+			id		=> $self -> {'gist'},
+			user		=> $login,
+			password	=> $passwd
 		);
 
-		$gist -> add_file($basename, $data, $ext);
-		$gist -> update;
-
-		return $self -> {'gist'}
+		return $gist -> edit(
+			files => { $basename => $data }
+		);
 	} else {
-		$gist = WWW::GitHub::Gist -> new(
-			user	=> $login,
-			token	=> $token
+		$gist = WWW::GitHub::Gist::v3 -> new(
+			user		=> $login,
+			password	=> $passwd
 		);
-
-		$gist -> add_file($basename, $data, $ext);
 
 		return $gist -> create(
-			private => $self -> {'private'},
-			description => $self -> {'description'}
-		) -> {'repo'};
+			description => $self -> {'description'},
+			public => $self -> {'private'} ? 0 : 1,
+			files => { $basename => $data }
+		);
 	}
 }
 
