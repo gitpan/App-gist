@@ -1,9 +1,45 @@
 ==================================================
-Changes from 2011-02-05 00:00:00 +0000 to present.
+Changes from 2011-04-14 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.05 at 2012-02-05 15:16:08 +0000
+version 0.06 at 2012-04-13 08:48:22 +0000
+-----------------------------------------
+
+  Change: 45d29e8c74c3929e22ad0112193e1f78d88cc090
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-04-13 10:48:13 +0000
+
+    dist.ini: use Git::NextVersion plugin 
+
+  Change: 755833a294a9d2eba48716d76eb70d34ca2b8f8f
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-04-13 10:47:21 +0000
+
+    gist: rename HTML URL -> Web URL 
+
+  Change: 1cfa7bd387207a13b41121cf37a9a8949c611ec7
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-04-13 10:46:40 +0000
+
+    gist: print HTML url also for private gists 
+
+  Change: a9805d6452820fbd9e7a776399a28e00eeb134db
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-04-13 01:44:37 +0000
+
+    Merge pull request #1 from alexrj/patch-1
+
+    Added html_url to output 
+
+  Change: 52f85ff9c647c383652317847acc72ea84d3f9f9
+  Author: Alessandro Ranellucci <aar@cpan.org>
+  Date : 2012-04-11 17:35:14 +0000
+
+    Added html_url to output 
+
+-----------------------------------------
+version 0.05 at 2012-02-05 15:15:53 +0000
 -----------------------------------------
 
   Change: 7a987e70eb9ac7f45ac24d3b8a8f7b4b8196a520
@@ -76,78 +112,6 @@ version 0.04 at 2011-04-25 16:47:26 +0000
 
     fix documentation for '--description' 
 
------------------------------------------
-version 0.03 at 2011-03-27 13:24:57 +0000
------------------------------------------
-
-  Change: 6d5dc142174d50c9b7eb414bc6e7097c6159a9dd
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-27 15:24:57 +0000
-
-    bump version 
-
-  Change: 8eeb7501161d7763c6d2cf382dc11e9e08114b7c
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-27 15:23:03 +0000
-
-    add '--description' option 
-
-  Change: 5cb26651434e21a9a5f2d64e164b74b8f5485ad1
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-27 15:17:00 +0000
-
-    fix bug in cli arguments parsing 
-
-  Change: e4262b7514df9657cdce5401ca4606aa415a3891
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-27 15:09:57 +0000
-
-    add '--private' option 
-
------------------------------------------
-version 0.02 at 2011-03-26 18:48:20 +0000
------------------------------------------
-
-  Change: a8f2cb82fd11e9efd06ca8d0600487234d0450fe
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-26 19:48:20 +0000
-
-    bump version 
-
-  Change: 4dde620e883224a5a2ba9dbfe601b1734978a5cb
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-26 19:46:10 +0000
-
-    add '--update' option 
-
------------------------------------------
-version 0.01 at 2011-03-21 21:18:20 +0000
------------------------------------------
-
-  Change: ccc62fa274ddaceb483a62273af6bf169b1b8624
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-21 22:18:20 +0000
-
-    improve docs 
-
-  Change: a9d32dafa6567fe0da7a7cb3c2be6aaeb0894cd9
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-21 22:18:20 +0000
-
-    add tests 
-
-  Change: e0e97174b5b0bfda72b0e444dfed71445326771c
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-21 22:18:20 +0000
-
-    split core code from presentation 
-
-  Change: c5a39443b7ab9a57bf9bf710b816621b006b5954
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-21 21:47:00 +0000
-
-    first commit 
-
-================
-End of releases.
-================
+================================================
+Plus 3 releases after 2011-04-14 00:00:00 +0000.
+================================================

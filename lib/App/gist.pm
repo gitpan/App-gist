@@ -1,6 +1,6 @@
 package App::gist;
 {
-  $App::gist::VERSION = '0.05';
+  $App::gist::VERSION = '0.06';
 }
 
 use File::Basename;
@@ -15,7 +15,7 @@ App::gist - GitHub Gist creator
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
