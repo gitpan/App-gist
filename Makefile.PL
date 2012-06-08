@@ -26,13 +26,16 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "App::gist",
   "PREREQ_PM" => {
+    "App::Cmd::Simple" => 0,
+    "Class::Load" => 0,
     "File::Basename" => 0,
-    "Getopt::Long" => 0,
+    "Term::ReadKey" => 0,
     "WWW::GitHub::Gist::v3" => 0,
+    "base" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.06",
+  "VERSION" => "0.07",
   "test" => {
     "TESTS" => "t/*.t"
   }

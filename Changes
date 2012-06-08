@@ -1,9 +1,32 @@
 ==================================================
-Changes from 2011-04-14 00:00:00 +0000 to present.
+Changes from 2011-06-09 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.06 at 2012-04-13 08:48:22 +0000
+version 0.07 at 2012-06-08 10:32:08 +0000
+-----------------------------------------
+
+  Change: 943dfe774120f39426190a6099ec59a533837c94
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-06-08 12:31:54 +0000
+
+    dist.ini: disable POD coverage 
+
+  Change: 53011832f0d64302928a4e23bc6abc95aec91294
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-06-08 12:31:43 +0000
+
+    gist.pm: update docs 
+
+  Change: 25a31ee25f3f8abd12670c17df50531de1a0e39b
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-06-07 19:47:14 +0000
+
+    gist.pm: switch to App::Cmd::Simple and optionally use
+    Config::Identity too 
+
+-----------------------------------------
+version 0.06 at 2012-04-13 08:48:13 +0000
 -----------------------------------------
 
   Change: 45d29e8c74c3929e22ad0112193e1f78d88cc090
@@ -72,46 +95,6 @@ version 0.05 at 2012-02-05 15:15:53 +0000
 
     remove tests 
 
------------------------------------------
-version 0.04 at 2011-04-25 16:47:26 +0000
------------------------------------------
-
-  Change: 1f17c3f01e0f4c7eefa6a5423150e5c8ef4ea6d6
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-04-25 18:47:26 +0000
-
-    bump version 
-
-  Change: 4561be9e0e8c6bc5054fca2be782ef53dfcba86b
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-04-25 18:46:54 +0000
-
-    support paste from STDIN 
-
-  Change: 662e858621fc29fe440355ac78ddf300f2ce5e95
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-04-25 18:23:18 +0000
-
-    re-fix documentation for --description 
-
-  Change: 2c6d47c2088b6a14b626bcca4bc5270e262a2f9d
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-04-25 18:22:29 +0000
-
-    add --extension option 
-
-  Change: 04f10d9b7c40cd667ba74bba3832258a04fc5736
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-04-25 18:05:10 +0000
-
-    switch to Author::ALEXBIO dzil bundle 
-
-  Change: 8bbb84cf8d18db9318a0fbc21884637b01950c24
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-03-27 20:03:57 +0000
-
-    fix documentation for '--description' 
-
 ================================================
-Plus 3 releases after 2011-04-14 00:00:00 +0000.
+Plus 4 releases after 2011-06-09 00:00:00 +0000.
 ================================================
