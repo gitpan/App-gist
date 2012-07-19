@@ -42,16 +42,16 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/AlexBio/p5-App-gist/issues"
+         "web" : "https://github.com/AlexBio/gist/issues"
       },
       "homepage" : "http://metacpan.org/release/App-gist/",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/AlexBio/p5-App-gist.git",
-         "web" : "https://github.com/AlexBio/p5-App-gist"
+         "url" : "git://github.com/AlexBio/gist.git",
+         "web" : "https://github.com/AlexBio/gist"
       }
    },
-   "version" : "0.08",
+   "version" : "0.09",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -122,12 +122,12 @@
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Meta",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Meta",
-            "version" : "0.23"
+            "version" : "0.25"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Update",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Update",
-            "version" : "0.23"
+            "version" : "0.25"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
@@ -172,7 +172,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Test::CheckManifest",
             "name" : "@Author::ALEXBIO/Test::CheckManifest",
-            "version" : "0.02"
+            "version" : "0.03"
          },
          {
             "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
@@ -197,7 +197,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Clean",
             "name" : "@Author::ALEXBIO/Clean",
-            "version" : "0.03"
+            "version" : "0.04"
          },
          {
             "class" : "Dist::Zilla::Plugin::FinderCode",

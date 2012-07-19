@@ -25,10 +25,10 @@ requires:
   strict: 0
   warnings: 0
 resources:
-  bugtracker: https://github.com/AlexBio/p5-App-gist/issues
+  bugtracker: https://github.com/AlexBio/gist/issues
   homepage: http://metacpan.org/release/App-gist/
-  repository: git://github.com/AlexBio/p5-App-gist.git
-version: 0.08
+  repository: git://github.com/AlexBio/gist.git
+version: 0.09
 x_Dist_Zilla:
   plugins:
     -
@@ -86,11 +86,11 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::GitHub::Meta
       name: '@Author::ALEXBIO/@GitHub/GitHub::Meta'
-      version: 0.23
+      version: 0.25
     -
       class: Dist::Zilla::Plugin::GitHub::Update
       name: '@Author::ALEXBIO/@GitHub/GitHub::Update'
-      version: 0.23
+      version: 0.25
     -
       class: Dist::Zilla::Plugin::Git::NextVersion
       name: '@Author::ALEXBIO/Git::NextVersion'
@@ -126,7 +126,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::CheckManifest
       name: '@Author::ALEXBIO/Test::CheckManifest'
-      version: 0.02
+      version: 0.03
     -
       class: Dist::Zilla::Plugin::PodSyntaxTests
       name: '@Author::ALEXBIO/PodSyntaxTests'
@@ -146,7 +146,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Clean
       name: '@Author::ALEXBIO/Clean'
-      version: 0.03
+      version: 0.04
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
