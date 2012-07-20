@@ -28,7 +28,7 @@ resources:
   bugtracker: https://github.com/AlexBio/gist/issues
   homepage: http://metacpan.org/release/App-gist/
   repository: git://github.com/AlexBio/gist.git
-version: 0.09
+version: 0.10
 x_Dist_Zilla:
   plugins:
     -
@@ -134,6 +134,10 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: '@Author::ALEXBIO/Git::Tag'
+      version: 1.121820
+    -
+      class: Dist::Zilla::Plugin::Git::Push
+      name: '@Author::ALEXBIO/Git::Push'
       version: 1.121820
     -
       class: Dist::Zilla::Plugin::UploadToCPAN

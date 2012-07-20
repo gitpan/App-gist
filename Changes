@@ -1,9 +1,46 @@
 ==================================================
-Changes from 2011-07-20 00:00:00 +0000 to present.
+Changes from 2011-07-21 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.09 at 2012-07-19 09:44:15 +0000
+version 0.10 at 2012-07-20 21:46:52 +0000
+-----------------------------------------
+
+  Change: 0dfb91ceac91ade31d2f513e60e8d52179b50395
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-20 23:46:41 +0000
+
+    gist: document the new --web option 
+
+  Change: 10c381eab2a7089dda444ed97b6e3df1b7ecbcff
+  Author: Alessandro Ghedini <al3xbio@gmail.com>
+  Date : 2012-07-20 14:37:04 +0000
+
+    Merge pull request #2 from omega/quiet-mode
+
+    Add -w|web 
+
+  Change: cbd6c89540a5b6231a0d97b531485b43ce4bd8f3
+  Author: Andreas Marienborg <andreas.marienborg@gmail.com>
+  Date : 2012-07-20 07:52:02 +0000
+
+    Change -q|quiet to -w|web 
+
+  Change: ce36fb7eff5a081a95726d079b77257284d3a41d
+  Author: Andreas Marienborg <andreas.marienborg@gmail.com>
+  Date : 2012-07-19 22:56:48 +0000
+
+    Add -q|quiet
+
+    If this is set, the output will be nothing but the web url. On Mac
+    that lets you do the following:
+
+    echo "ape" | gist -q | pbcopy
+
+    and end up with the url in the copy-paste buffer 
+
+-----------------------------------------
+version 0.09 at 2012-07-19 09:42:49 +0000
 -----------------------------------------
 
   Change: 00a596269993c0db6046be5b3c6b313ce3bd5703
@@ -116,5 +153,5 @@ version 0.05 at 2012-02-05 15:15:53 +0000
     remove tests 
 
 ================================================
-Plus 4 releases after 2011-07-20 00:00:00 +0000.
+Plus 4 releases after 2011-07-21 00:00:00 +0000.
 ================================================

@@ -1,6 +1,6 @@
 package App::gist;
 {
-  $App::gist::VERSION = '0.09';
+  $App::gist::VERSION = '0.10';
 }
 
 use strict;
@@ -18,7 +18,7 @@ App::gist - GitHub Gist creator
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 
@@ -35,7 +35,8 @@ sub opt_spec {
 	return (
 		["description|d=s", "set the description for the gist"         ],
 		["update|u=s",      "update the given gist with the given file"],
-		["private|p",       "create a private gist"                    ]
+		["private|p",       "create a private gist"                    ],
+		["web|w",           "only output the web url"                  ]
 	);
 }
 
@@ -48,6 +49,7 @@ sub execute {
 	my $file	= $args -> [0];
 	my $description	= $opt -> {'description'};
 	my $public	= $opt -> {'private'} ? 0 : 1;
+	my $web		= $opt -> {'web'} ? 1 : 0;
 
 	my ($name, $data);
 
@@ -71,11 +73,16 @@ sub execute {
 		_edit_gist($gist, $id, $name, $data)	:
 		_create_gist($gist, $name, $data, $description, $public);
 
-	print "Gist " . $info -> {'id'} . " successfully created/modified.\n";
-	print "Web URL: " . $info -> {'html_url'} . "\n";
-	print "Public Clone URL: " . $info -> {'git_pull_url'} . "\n"
-		if $public;
-	print "Private Clone URL: " . $info -> {'git_push_url'} . "\n";
+
+	if ($web) {
+		print $info -> {'html_url'} . "\n";
+ 	} else {
+		print "Gist " . $info -> {'id'} . " successfully created/modified.\n";
+		print "Web URL: " . $info -> {'html_url'} . "\n";
+		print "Public Clone URL: " . $info -> {'git_pull_url'} . "\n"
+			if $public;
+		print "Private Clone URL: " . $info -> {'git_push_url'} . "\n";
+	}
 }
 
 sub _create_gist {

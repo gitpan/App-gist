@@ -51,7 +51,7 @@
          "web" : "https://github.com/AlexBio/gist"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -182,6 +182,11 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "@Author::ALEXBIO/Git::Tag",
+            "version" : "1.121820"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Git::Push",
+            "name" : "@Author::ALEXBIO/Git::Push",
             "version" : "1.121820"
          },
          {
