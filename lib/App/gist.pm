@@ -1,6 +1,6 @@
 package App::gist;
 {
-  $App::gist::VERSION = '0.10';
+  $App::gist::VERSION = '0.11';
 }
 
 use strict;
@@ -18,7 +18,7 @@ App::gist - GitHub Gist creator
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
