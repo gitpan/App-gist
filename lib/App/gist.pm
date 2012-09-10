@@ -1,6 +1,6 @@
 package App::gist;
 {
-  $App::gist::VERSION = '0.11';
+  $App::gist::VERSION = '0.12';
 }
 
 use strict;
@@ -18,7 +18,7 @@ App::gist - GitHub Gist creator
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 
@@ -76,7 +76,7 @@ sub execute {
 
 	if ($web) {
 		print $info -> {'html_url'} . "\n";
- 	} else {
+	} else {
 		print "Gist " . $info -> {'id'} . " successfully created/modified.\n";
 		print "Web URL: " . $info -> {'html_url'} . "\n";
 		print "Public Clone URL: " . $info -> {'git_pull_url'} . "\n"
@@ -99,7 +99,12 @@ sub _edit_gist {
 
 	$gist -> id($id);
 
-	return $gist -> edit(files => { $name => $data });
+	my $info = $gist -> show;
+
+	return $gist -> edit(
+		description => $info -> {'description'},
+		files       => { $name => $data }
+	);
 }
 
 sub _get_credentials {
