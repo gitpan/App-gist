@@ -1,6 +1,6 @@
 package App::gist;
 {
-  $App::gist::VERSION = '0.12';
+  $App::gist::VERSION = '0.13';
 }
 
 use strict;
@@ -9,16 +9,16 @@ use warnings;
 use base qw(App::Cmd::Simple);
 
 use File::Basename;
-use WWW::GitHub::Gist::v3;
+use WWW::GitHub::Gist;
 use Class::Load qw(try_load_class);
 
 =head1 NAME
 
-App::gist - GitHub Gist creator
+App::gist - Command-line GitHub's gist client
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
@@ -64,7 +64,7 @@ sub execute {
 		$data = join('', <STDIN>);
 	}
 
-	my $gist = WWW::GitHub::Gist::v3 -> new(
+	my $gist = WWW::GitHub::Gist -> new(
 		user		=> $login,
 		password	=> $passwd
 	);

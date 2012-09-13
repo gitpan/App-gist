@@ -1,5 +1,5 @@
 ---
-abstract: 'GitHub Gist creator'
+abstract: "Command-line GitHub's gist client"
 author:
   - 'Alessandro Ghedini <alexbio@cpan.org>'
 build_requires:
@@ -20,7 +20,7 @@ requires:
   Class::Load: 0
   File::Basename: 0
   Term::ReadKey: 0
-  WWW::GitHub::Gist::v3: 0
+  WWW::GitHub::Gist: 0
   base: 0
   strict: 0
   warnings: 0
@@ -28,7 +28,7 @@ resources:
   bugtracker: https://github.com/ghedo/gist/issues
   homepage: http://metacpan.org/release/App-gist/
   repository: git://github.com/ghedo/gist.git
-version: 0.12
+version: 0.13
 x_Dist_Zilla:
   plugins:
     -

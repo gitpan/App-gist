@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "GitHub Gist creator",
+  "ABSTRACT" => "Command-line GitHub's gist client",
   "AUTHOR" => "Alessandro Ghedini <alexbio\@cpan.org>",
   "BUILD_REQUIRES" => {
     "File::Find" => 0,
@@ -30,12 +30,12 @@ my %WriteMakefileArgs = (
     "Class::Load" => 0,
     "File::Basename" => 0,
     "Term::ReadKey" => 0,
-    "WWW::GitHub::Gist::v3" => 0,
+    "WWW::GitHub::Gist" => 0,
     "base" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.12",
+  "VERSION" => "0.13",
   "test" => {
     "TESTS" => "t/*.t"
   }
