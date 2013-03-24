@@ -1,6 +1,6 @@
 package App::gist;
 {
-  $App::gist::VERSION = '0.13';
+  $App::gist::VERSION = '0.14';
 }
 
 use strict;
@@ -14,20 +14,15 @@ use Class::Load qw(try_load_class);
 
 =head1 NAME
 
-App::gist - Command-line GitHub's gist client
+App::gist - Gist command-line tool
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
-    use App::gist;
-
-    use strict;
-    use warnings;
-
-    App::gist -> run;
+   $ gist script.pl
 
 =cut
 

@@ -1,211 +1,64 @@
-==================================================
-Changes from 2011-09-14 00:00:00 +0000 to present.
-==================================================
+Revision history for App-gist
 
------------------------------------------
-version 0.13 at 2012-09-13 20:38:41 +0000
------------------------------------------
+0.14      2013-03-25 00:42:20 Europe/Rome
 
-  Change: 9a2b3ca6dbe08c7b25f17523ada45b063b199091
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-09-12 23:25:00 +0000
+ - Add a proper Changes file
+ - Improve documentation (no functional changes)
 
-    gist.pm: fix use of ::v3 
+0.13      2012-09-13 22:38:57 Europe/Rome
 
-  Change: 883a86a0f94ae61dc5b6838fdd8fd95e6539be76
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-09-12 12:47:04 +0000
+ - Documentation fixes (no functional changes)
+ - Switch to WWW::GitHub::Gist
 
-    gist.pm: don't use deprecated WWW::GitHub::Gist::v3 
+0.12      2012-09-10 19:39:58 Europe/Rome
 
-  Change: 6d8133ed5a58f84270e5acb6c4a09796987e6b44
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-09-12 12:46:34 +0000
+ - Keep the old description on update
 
-    gist.pm: update short description 
+0.11      2012-08-20 13:15:54 Europe/Rome
 
------------------------------------------
-version 0.12 at 2012-08-30 14:32:57 +0000
------------------------------------------
+ - Documentation fixes (no functional changes)
 
-  Change: c0f041d29d7ab723c60b2553574bcb5f4d2ee6be
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-30 16:32:57 +0000
+0.10      2012-07-20 23:47:10 Europe/Rome
 
-    gist.pm: white space fix 
+ - Add --web option
 
-  Change: d4edf78b40c91aca07a5dea402a88844ca3c5e01
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-08-30 16:31:57 +0000
+0.09      2012-07-19 11:44:30 Europe/Rome
 
-    gist.pm: keep description on update 
+ - Rebuild to update META.* repository links (no functional changes)
 
------------------------------------------
-version 0.11 at 2012-07-21 14:41:48 +0000
------------------------------------------
+0.08      2012-07-07 14:07:13 Europe/Rome
 
-  Change: f1052a2dca1bd8c43a1a4189134213d7d0786b0b
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-21 16:41:48 +0000
+ - Rebuild to update META.* repository links (no functional changes)
 
-    gist: fix docs about credentials 
+0.07      2012-06-08 12:32:28 Europe/Rome
 
-  Change: 8727a5f9ba0213477e9fc12a004b5f71db5ed17f
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-21 16:36:00 +0000
+ - Switch to App::Cmd::Simple
+ - Optional support for Config::Identity
+ - Documentation fixes (no functional changes)
 
-    gist: document Config::Identity usage 
+0.06      2012-04-13 10:48:52 Europe/Rome
 
------------------------------------------
-version 0.10 at 2012-07-20 21:46:41 +0000
------------------------------------------
+ - Print html_url after creation (GH#1) (thanks, @alexrj)
 
-  Change: 0dfb91ceac91ade31d2f513e60e8d52179b50395
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-20 23:46:41 +0000
+0.05      2012-02-05 16:16:24 Europe/Rome
 
-    gist: document the new --web option 
+ - Switch to GitHub API v3
 
-  Change: 10c381eab2a7089dda444ed97b6e3df1b7ecbcff
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-20 14:37:04 +0000
+0.04      2011-04-25 18:47:40 Europe/Rome
 
-    Merge pull request #2 from omega/quiet-mode
+ - Documentation fixes (no functional changes)
+ - Add --extension option
+ - Support input from STDIN
 
-    Add -w|web 
+0.03      2011-03-27 15:25:12 Europe/Rome
 
-  Change: cbd6c89540a5b6231a0d97b531485b43ce4bd8f3
-  Author: Andreas Marienborg <andreas.marienborg@gmail.com>
-  Date : 2012-07-20 07:52:02 +0000
+ - Add --private and --description option
+ - Fix bug in command-line ardgument parsing
 
-    Change -q|quiet to -w|web 
+0.02      2011-03-26 19:48:38 Europe/Rome
 
-  Change: ce36fb7eff5a081a95726d079b77257284d3a41d
-  Author: Andreas Marienborg <andreas.marienborg@gmail.com>
-  Date : 2012-07-19 22:56:48 +0000
+ - Add --update option
 
-    Add -q|quiet
+0.01      2011-03-21 22:19:42 Europe/Rome
 
-    If this is set, the output will be nothing but the web url. On Mac
-    that lets you do the following:
-
-    echo "ape" | gist -q | pbcopy
-
-    and end up with the url in the copy-paste buffer 
-
------------------------------------------
-version 0.09 at 2012-07-19 09:42:49 +0000
------------------------------------------
-
-  Change: 00a596269993c0db6046be5b3c6b313ce3bd5703
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-19 11:42:49 +0000
-
-    dist.ini: update repo name again 
-
------------------------------------------
-version 0.08 at 2012-07-07 12:05:02 +0000
------------------------------------------
-
-  Change: e05553b6be0c25964b7b4ab48cf1e94341967588
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-07-07 14:05:02 +0000
-
-    dist.ini: update repo name 
-
------------------------------------------
-version 0.07 at 2012-06-08 10:31:54 +0000
------------------------------------------
-
-  Change: 943dfe774120f39426190a6099ec59a533837c94
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-06-08 12:31:54 +0000
-
-    dist.ini: disable POD coverage 
-
-  Change: 53011832f0d64302928a4e23bc6abc95aec91294
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-06-08 12:31:43 +0000
-
-    gist.pm: update docs 
-
-  Change: 25a31ee25f3f8abd12670c17df50531de1a0e39b
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-06-07 19:47:14 +0000
-
-    gist.pm: switch to App::Cmd::Simple and optionally use
-    Config::Identity too 
-
------------------------------------------
-version 0.06 at 2012-04-13 08:48:13 +0000
------------------------------------------
-
-  Change: 45d29e8c74c3929e22ad0112193e1f78d88cc090
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-04-13 10:48:13 +0000
-
-    dist.ini: use Git::NextVersion plugin 
-
-  Change: 755833a294a9d2eba48716d76eb70d34ca2b8f8f
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-04-13 10:47:21 +0000
-
-    gist: rename HTML URL -> Web URL 
-
-  Change: 1cfa7bd387207a13b41121cf37a9a8949c611ec7
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-04-13 10:46:40 +0000
-
-    gist: print HTML url also for private gists 
-
-  Change: a9805d6452820fbd9e7a776399a28e00eeb134db
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-04-13 01:44:37 +0000
-
-    Merge pull request #1 from alexrj/patch-1
-
-    Added html_url to output 
-
-  Change: 52f85ff9c647c383652317847acc72ea84d3f9f9
-  Author: Alessandro Ranellucci <aar@cpan.org>
-  Date : 2012-04-11 17:35:14 +0000
-
-    Added html_url to output 
-
------------------------------------------
-version 0.05 at 2012-02-05 15:15:53 +0000
------------------------------------------
-
-  Change: 7a987e70eb9ac7f45ac24d3b8a8f7b4b8196a520
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-02-05 16:15:53 +0000
-
-    bump version 
-
-  Change: 67e49982cf3fb111cf886c6b62da57bdc99f4f9f
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-02-05 16:14:25 +0000
-
-    various fixes 
-
-  Change: bb6907d40c16977a7fbeb1ff6b2b3794c6c0885a
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-02-05 16:09:49 +0000
-
-    s/token/password/g 
-
-  Change: 78ecad293b69839a10f80be6e8ef12650bca72e5
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2012-02-05 16:06:14 +0000
-
-    initial switch to GitHub API v3 
-
-  Change: 4173e321e506cc57a893d0356f9a26d71ae30271
-  Author: Alessandro Ghedini <al3xbio@gmail.com>
-  Date : 2011-09-11 15:28:25 +0000
-
-    remove tests 
-
-================================================
-Plus 4 releases after 2011-09-14 00:00:00 +0000.
-================================================
+ - Initial version
