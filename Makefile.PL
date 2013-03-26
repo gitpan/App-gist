@@ -29,13 +29,15 @@ my %WriteMakefileArgs = (
     "App::Cmd::Simple" => 0,
     "Class::Load" => 0,
     "File::Basename" => 0,
+    "Moo::Role" => 0,
+    "Pithub::Base" => 0,
+    "Pithub::Gists" => 0,
     "Term::ReadKey" => 0,
-    "WWW::GitHub::Gist" => 0,
     "base" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.14",
+  "VERSION" => "0.15",
   "test" => {
     "TESTS" => "t/*.t"
   }

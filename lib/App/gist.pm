@@ -1,6 +1,6 @@
 package App::gist;
 {
-  $App::gist::VERSION = '0.14';
+  $App::gist::VERSION = '0.15';
 }
 
 use strict;
@@ -8,9 +8,36 @@ use warnings;
 
 use base qw(App::Cmd::Simple);
 
+use Pithub::Gists;
 use File::Basename;
-use WWW::GitHub::Gist;
 use Class::Load qw(try_load_class);
+
+BEGIN {
+	package App::gist::Auth;
+{
+  $App::gist::Auth::VERSION = '0.15';
+}
+
+	use Moo::Role;
+	use Pithub::Base;
+
+	around _request_for => sub {
+		my ($orig, $self, @args) = @_;
+		my $req = $self -> $orig(@args);
+
+		my ($login, $passwd) = App::gist::_get_credentials();
+
+		$req -> headers -> remove_header('Authorization');
+		$req -> headers -> authorization_basic($login, $passwd);
+
+		return $req;
+	};
+
+	'Moo::Role' -> apply_roles_to_package(
+		'Pithub::Base',
+		'App::gist::Auth'
+	);
+};
 
 =head1 NAME
 
@@ -18,7 +45,7 @@ App::gist - Gist command-line tool
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 
@@ -28,17 +55,15 @@ version 0.14
 
 sub opt_spec {
 	return (
-		["description|d=s", "set the description for the gist"         ],
-		["update|u=s",      "update the given gist with the given file"],
-		["private|p",       "create a private gist"                    ],
-		["web|w",           "only output the web url"                  ]
+		['description|d=s', 'set the description for the gist'         ],
+		['update|u=s',      'update the given gist with the given file'],
+		['private|p',       'create a private gist'                    ],
+		['web|w',           'only output the web url'                  ]
 	);
 }
 
 sub execute {
 	my ($self, $opt, $args) = @_;
-
-	my ($login, $passwd) = $self -> _get_credentials;
 
 	my $id		= $opt -> {'update'};
 	my $file	= $args -> [0];
@@ -59,52 +84,62 @@ sub execute {
 		$data = join('', <STDIN>);
 	}
 
-	my $gist = WWW::GitHub::Gist -> new(
-		user		=> $login,
-		password	=> $passwd
-	);
+	my $gist = Pithub::Gists -> new;
 
 	my $info = $id					?
 		_edit_gist($gist, $id, $name, $data)	:
 		_create_gist($gist, $name, $data, $description, $public);
 
+	die "Err: " . $info -> content -> {'message'} . ".\n"
+		unless $info -> success;
+
+	my $gist_id  = $info -> content -> {'id'};
+	my $html_url = $info -> content -> {'html_url'};
+	my $pull_url = $info -> content -> {'git_pull_url'};
+	my $push_url = $info -> content -> {'git_push_url'};
 
 	if ($web) {
-		print $info -> {'html_url'} . "\n";
+		print "$html_url\n";
 	} else {
-		print "Gist " . $info -> {'id'} . " successfully created/modified.\n";
-		print "Web URL: " . $info -> {'html_url'} . "\n";
-		print "Public Clone URL: " . $info -> {'git_pull_url'} . "\n"
-			if $public;
-		print "Private Clone URL: " . $info -> {'git_push_url'} . "\n";
+		print "Gist '$gist_id' successfully created/updated.\n";
+		print "Web URL: $html_url\n";
+		print "Public Clone URL: $pull_url\n" if $public;
+		print "Private Clone URL: $push_url\n";
 	}
 }
 
 sub _create_gist {
 	my ($gist, $name, $data, $description, $public) = @_;
 
-	return $gist -> create(
-		description => $description, public => $public,
-		files => { $name => $data }
-	);
+	return $gist -> create(data => {
+		description => $description,
+		public      => $public,
+		files       => {
+			$name => { content => $data }
+		}
+	});
 }
 
 sub _edit_gist {
 	my ($gist, $id, $name, $data) = @_;
 
-	$gist -> id($id);
+	my $info = $gist -> get(gist_id => $id);
 
-	my $info = $gist -> show;
+	die "Err: " . $info -> content -> {'message'} . ".\n"
+		unless $info -> success;
 
-	return $gist -> edit(
-		description => $info -> {'description'},
-		files       => { $name => $data }
+	return $gist -> update(
+		gist_id => $id,
+		data    => {
+			description => $info -> content -> {'description'},
+			files       => {
+				$name => { content => $data }
+			}
+		}
 	);
 }
 
 sub _get_credentials {
-	my ($self) = @_;
-
 	my ($login, $pass, $token);
 
 	my %identity = Config::Identity::GitHub -> load
@@ -121,8 +156,7 @@ sub _get_credentials {
 			"Err: missing value 'user' in ~/.github" :
 			"Err: Missing value 'github.user' in git config";
 
-		$self -> log($error);
-		return;
+		die "$error.\n";
 	}
 
 	if (%identity) {
@@ -134,8 +168,7 @@ sub _get_credentials {
 	}
 
 	if ($token) {
-		$self -> log("Err: Login with GitHub token is deprecated");
-		return (undef, undef);
+		die "Err: Login with GitHub token is deprecated.\n";
 	} elsif (!$pass) {
 		require Term::ReadKey;
 
@@ -147,12 +180,6 @@ sub _get_credentials {
 	}
 
 	return ($login, $pass);
-}
-
-sub log {
-	my ($self, $msg) = @_;
-
-	print STDERR "$msg\n";
 }
 
 =head1 AUTHOR

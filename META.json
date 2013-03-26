@@ -29,8 +29,10 @@
             "App::Cmd::Simple" : "0",
             "Class::Load" : "0",
             "File::Basename" : "0",
+            "Moo::Role" : "0",
+            "Pithub::Base" : "0",
+            "Pithub::Gists" : "0",
             "Term::ReadKey" : "0",
-            "WWW::GitHub::Gist" : "0",
             "base" : "0",
             "strict" : "0",
             "warnings" : "0"
@@ -56,7 +58,7 @@
          "web" : "https://github.com/ghedo/gist"
       }
    },
-   "version" : "0.14",
+   "version" : "0.15",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.014002"
@@ -130,12 +132,12 @@
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Meta",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Meta",
-            "version" : "0.33"
+            "version" : "0.32"
          },
          {
             "class" : "Dist::Zilla::Plugin::GitHub::Update",
             "name" : "@Author::ALEXBIO/@GitHub/GitHub::Update",
-            "version" : "0.33"
+            "version" : "0.32"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion",
