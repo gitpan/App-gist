@@ -1,5 +1,11 @@
 Revision history for App-gist
 
+0.16      2014-06-24 15:11:33+02:00 Europe/Rome
+
+ - Add --name option
+ - Abort if no options are supplied and STDIN is a TTY (GH#3)
+   (thanks, @sestaton)
+
 0.15      2013-03-26 17:10:16 Europe/Rome
 
  - Switch to Pithub

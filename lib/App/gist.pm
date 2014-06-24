@@ -1,8 +1,5 @@
 package App::gist;
-{
-  $App::gist::VERSION = '0.15';
-}
-
+$App::gist::VERSION = '0.16';
 use strict;
 use warnings;
 
@@ -14,11 +11,8 @@ use Class::Load qw(try_load_class);
 
 BEGIN {
 	package App::gist::Auth;
-{
-  $App::gist::Auth::VERSION = '0.15';
-}
-
-	use Moo::Role;
+$App::gist::Auth::VERSION = '0.16';
+use Moo::Role;
 	use Pithub::Base;
 
 	around _request_for => sub {
@@ -45,7 +39,7 @@ App::gist - Gist command-line tool
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -56,10 +50,18 @@ version 0.15
 sub opt_spec {
 	return (
 		['description|d=s', 'set the description for the gist'         ],
+		['name|n=s',        'specify the name of the file'             ],
 		['update|u=s',      'update the given gist with the given file'],
 		['private|p',       'create a private gist'                    ],
 		['web|w',           'only output the web url'                  ]
 	);
+}
+
+sub validate_args {
+	my ($self, $opt, $args) = @_;
+
+	$self -> usage_error("Too few arguments.")
+		unless %$opt || @$args || ! -t STDIN;
 }
 
 sub execute {
@@ -80,7 +82,7 @@ sub execute {
 
 		$name = basename($file);
 	} else {
-		$name = 'gistfile.txt';
+		$name = $opt -> {'name'} || 'gistfile.txt';
 		$data = join('', <STDIN>);
 	}
 
